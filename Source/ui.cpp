@@ -58,8 +58,8 @@ LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 			AppendMenu(popup, MF_STRING | MF_GRAYED, RFU_TRAYMENU_APC, buffer);
 			AppendMenu(popup, MF_SEPARATOR, 0, NULL);
 
-			AppendMenu(popup, MF_STRING | (Settings::UnlockClient ? MF_CHECKED : 0), RFU_TRAYMENU_CLIENT, "Unlock Roblox Player");
-			AppendMenu(popup, MF_STRING | (Settings::UnlockStudio ? MF_CHECKED : 0), RFU_TRAYMENU_STUDIO, "Unlock Roblox Studio");
+			AppendMenu(popup, MF_STRING | (Settings::UnlockClient ? MF_CHECKED : 0), RFU_TRAYMENU_CLIENT, "Unlock Solario Player");
+			AppendMenu(popup, MF_STRING | (Settings::UnlockStudio ? MF_CHECKED : 0), RFU_TRAYMENU_STUDIO, "Unlock Solario Studio");
 			AppendMenu(popup, MF_STRING | (Settings::CheckForUpdates ? MF_CHECKED : 0), RFU_TRAYMENU_CFU, "Check for Updates");
 
 			HMENU submenu = CreatePopupMenu();
@@ -198,9 +198,9 @@ void UI::CreateHiddenConsole()
 	}
 
 #ifdef _WIN64
-	SetConsoleTitleA("Roblox FPS Unlocker " RFU_VERSION " (64-bit) Console");
+	SetConsoleTitleA("Solario FPS Unlocker " RFU_VERSION " (64-bit) Console");
 #else
-	SetConsoleTitleA("Roblox FPS Unlocker " RFU_VERSION " (32-bit) Console");
+	SetConsoleTitleA("Solario FPS Unlocker " RFU_VERSION " (32-bit) Console");
 #endif
 
 	SetConsoleVisible(false);
@@ -235,7 +235,7 @@ int UI::Start(HINSTANCE instance, LPTHREAD_START_ROUTINE watchthread)
 
 	RegisterClassEx(&wcex);
 
-	UI::Window = CreateWindow("RFUClass", "Roblox FPS Unlocker", 0, 0, 0, 0, 0, NULL, NULL, instance, NULL);
+	UI::Window = CreateWindow("RFUClass", "Solario FPS Unlocker", 0, 0, 0, 0, 0, NULL, NULL, instance, NULL);
 	if (!UI::Window)
 		return 0;
 
